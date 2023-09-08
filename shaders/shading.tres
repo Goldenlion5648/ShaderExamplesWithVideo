@@ -1,0 +1,10 @@
+[gd_resource type="Shader" format=3 uid="uid://yhdbveprd4g7"]
+
+[resource]
+code = "shader_type canvas_item;
+void fragment() {
+	float pos = 256.0 - sin(TIME) * 40.0;
+    float d = distance(FRAGCOORD.xy, vec2(pos, pos)) / pos;
+    COLOR.rgb *= d;
+}
+"

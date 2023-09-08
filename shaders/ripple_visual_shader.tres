@@ -1,0 +1,73 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://5imv0rnmydci"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_otuv1"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_uhh4y"]
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_fhgeq"]
+constant = 0.2
+
+[sub_resource type="VisualShaderNodeVectorDistance" id="VisualShaderNodeVectorDistance_46sy4"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0.5, 0.5)]
+op_type = 0
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+
+void fragment() {
+// Input:2
+	vec2 n_out2p0 = UV;
+
+
+// Distance:5
+	vec2 n_in5p1 = vec2(0.50000, 0.50000);
+	float n_out5p0 = distance(n_out2p0, n_in5p1);
+
+
+// FloatConstant:4
+	float n_out4p0 = 0.200000;
+
+
+	vec3 n_out3p0;
+// If:3
+	float n_in3p1 = 0.00000;
+	float n_in3p2 = 0.00001;
+	vec3 n_in3p3 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_in3p4 = vec3(0.00000, 0.00000, 0.00000);
+	if(abs(n_out5p0 - n_in3p1) < n_in3p2)
+	{
+		n_out3p0 = n_in3p3;
+	}
+	else if(n_out5p0 < n_in3p1)
+	{
+		n_out3p0 = vec3(n_out4p0);
+	}
+	else
+	{
+		n_out3p0 = n_in3p4;
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out3p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(900, 100)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_otuv1")
+nodes/fragment/2/position = Vector2(60, 80)
+nodes/fragment/3/node = SubResource("VisualShaderNodeIf_uhh4y")
+nodes/fragment/3/position = Vector2(600, 60)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatConstant_fhgeq")
+nodes/fragment/4/position = Vector2(360, 260)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVectorDistance_46sy4")
+nodes/fragment/5/position = Vector2(400, 100)
+nodes/fragment/connections = PackedInt32Array(2, 0, 5, 0, 5, 0, 3, 0, 4, 0, 3, 5, 3, 0, 0, 0)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://brxf33rdudog"]
+
+[ext_resource type="Shader" uid="uid://ch6sjw5vv3wa1" path="res://shaders/darken_no_animation.tres" id="1_54g8i"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_ti84k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoubp"]
+resource_local_to_scene = true
+shader = ExtResource("1_54g8i")
+
+[node name="darken_no_animation" type="TextureRect"]
+material = SubResource("ShaderMaterial_aoubp")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("2_ti84k")
+expand_mode = 2

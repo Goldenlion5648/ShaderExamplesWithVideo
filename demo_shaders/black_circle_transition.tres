@@ -1,0 +1,14 @@
+[gd_resource type="Shader" format=3 uid="uid://chjedp2p0p5iy"]
+
+[resource]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+void fragment() {
+	vec2 center = vec2(0.50000, 0.50000);
+	float dist_to_center = distance(UV, center);
+	if(dist_to_center < cos(TIME))
+	{
+		COLOR.rgb = vec3(0.0);
+	}
+}
+"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cid8rnfbt4kdh"]
+
+[ext_resource type="Shader" uid="uid://bjajm8uc4cuhj" path="res://demo_shaders/moving_static_lines.tres" id="1_8v1pd"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_8ow34"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoubp"]
+resource_local_to_scene = true
+shader = ExtResource("1_8v1pd")
+
+[node name="static_lines" type="TextureRect"]
+material = SubResource("ShaderMaterial_aoubp")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("2_8ow34")
+expand_mode = 2

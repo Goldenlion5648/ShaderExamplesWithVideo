@@ -1,0 +1,147 @@
+[gd_scene load_steps=33 format=3 uid="uid://jdd43324pmgj"]
+
+[ext_resource type="Script" path="res://show_shader_scenes.gd" id="1_po4qk"]
+[ext_resource type="PackedScene" uid="uid://bbsf76bbtlf5o" path="res://scenes_with_shaders/checkerboard.tscn" id="1_tvrr8"]
+[ext_resource type="Shader" uid="uid://cm45jkkipa1e4" path="res://shaders/checkboard_blinds.tres" id="2_5nhcs"]
+[ext_resource type="PackedScene" uid="uid://bsgvw7vi07gyy" path="res://scenes_with_shaders/fade_transition.tscn" id="3_p1i54"]
+[ext_resource type="PackedScene" uid="uid://ilawiepc4mqh" path="res://scenes_with_shaders/slow_blink.tscn" id="4_pbuc1"]
+[ext_resource type="Shader" uid="uid://chjedp2p0p5iy" path="res://demo_shaders/black_circle_transition.tres" id="4_ryq36"]
+[ext_resource type="PackedScene" uid="uid://6usp0p10v60n" path="res://scenes_with_shaders/invert.tscn" id="6_tkhts"]
+[ext_resource type="Shader" uid="uid://d3ly16bmy144b" path="res://demo_shaders/fade_in_and_out.tres" id="6_vdseb"]
+[ext_resource type="PackedScene" uid="uid://cid8rnfbt4kdh" path="res://scenes_with_shaders/static_lines.tscn" id="8_d386v"]
+[ext_resource type="Shader" path="res://demo_shaders/invert.gdshader" id="8_ugahl"]
+[ext_resource type="PackedScene" uid="uid://cc2ikowo3t83d" path="res://scenes_with_shaders/ripple.tscn" id="10_1csyx"]
+[ext_resource type="Shader" uid="uid://bjajm8uc4cuhj" path="res://shaders/moving_static_lines.tres" id="10_jrphy"]
+[ext_resource type="Shader" uid="uid://cfyiqd420hned" path="res://shaders/ripple_effect.tres" id="12_4q3b4"]
+[ext_resource type="PackedScene" uid="uid://dmxbfhs013e7g" path="res://scenes_with_shaders/scrolling_lighting.tscn" id="13_vouuw"]
+[ext_resource type="Shader" uid="uid://bg6ggo1ntnhxq" path="res://shaders/shade_around_center.tres" id="14_8jj3m"]
+[ext_resource type="PackedScene" uid="uid://dn7fflhumr085" path="res://scenes_with_shaders/search_light.tscn" id="15_uwkfo"]
+[ext_resource type="Shader" uid="uid://dme132du08oor" path="res://demo_shaders/search_light_move_in_circle.tres" id="16_41n25"]
+[ext_resource type="Shader" uid="uid://ch6sjw5vv3wa1" path="res://shaders/darken_no_animation.tres" id="17_078vd"]
+[ext_resource type="PackedScene" uid="uid://brxf33rdudog" path="res://scenes_with_shaders/darken_no_animation.tscn" id="17_of5st"]
+[ext_resource type="Shader" path="res://shaders/disolve_shaders/disolve.gdshader" id="19_86yuc"]
+[ext_resource type="PackedScene" uid="uid://brepivf8i7173" path="res://scenes_with_shaders/disolve.tscn" id="19_rlbfp"]
+[ext_resource type="Texture2D" uid="uid://b77xiyq7ko8c1" path="res://textures/snake_noise.tres" id="20_26wml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7imi"]
+resource_local_to_scene = true
+shader = ExtResource("6_vdseb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8p8kj"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nhcs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwmal"]
+resource_local_to_scene = true
+shader = ExtResource("4_ryq36")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6w02"]
+resource_local_to_scene = true
+shader = ExtResource("8_ugahl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mp34k"]
+resource_local_to_scene = true
+shader = ExtResource("10_jrphy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41div"]
+resource_local_to_scene = true
+shader = ExtResource("12_4q3b4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hioxp"]
+resource_local_to_scene = true
+shader = ExtResource("14_8jj3m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bboaq"]
+shader = ExtResource("16_41n25")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7p6k"]
+resource_local_to_scene = true
+shader = ExtResource("17_078vd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljrrg"]
+resource_local_to_scene = true
+shader = ExtResource("19_86yuc")
+shader_parameter/dissolveNoise = ExtResource("20_26wml")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_po4qk")
+
+[node name="fade_in_and_out" parent="." instance=ExtResource("4_pbuc1")]
+material = SubResource("ShaderMaterial_l7imi")
+scale = Vector2(1.51, 1.51)
+
+[node name="checkerboard_blinds" parent="." instance=ExtResource("1_tvrr8")]
+visible = false
+material = SubResource("ShaderMaterial_8p8kj")
+use_parent_material = false
+scale = Vector2(1.51, 1.51)
+
+[node name="black_circle_transition" parent="." instance=ExtResource("3_p1i54")]
+visible = false
+material = SubResource("ShaderMaterial_mwmal")
+scale = Vector2(1.51, 1.51)
+
+[node name="invert" parent="." instance=ExtResource("6_tkhts")]
+visible = false
+material = SubResource("ShaderMaterial_y6w02")
+scale = Vector2(1.51, 1.51)
+
+[node name="moving_static_lines" parent="." instance=ExtResource("8_d386v")]
+visible = false
+material = SubResource("ShaderMaterial_mp34k")
+scale = Vector2(1.51, 1.51)
+
+[node name="ripple_effect" parent="." instance=ExtResource("10_1csyx")]
+visible = false
+material = SubResource("ShaderMaterial_41div")
+scale = Vector2(1.51, 1.51)
+
+[node name="shade_around_center" parent="." instance=ExtResource("13_vouuw")]
+visible = false
+material = SubResource("ShaderMaterial_hioxp")
+scale = Vector2(1.51, 1.51)
+
+[node name="search_light_move_in_circle" parent="." instance=ExtResource("15_uwkfo")]
+visible = false
+material = SubResource("ShaderMaterial_bboaq")
+scale = Vector2(1.51, 1.51)
+
+[node name="darken_no_animation" parent="." instance=ExtResource("17_of5st")]
+visible = false
+material = SubResource("ShaderMaterial_w7p6k")
+scale = Vector2(1.51, 1.51)
+
+[node name="disolve" parent="." instance=ExtResource("19_rlbfp")]
+visible = false
+material = SubResource("ShaderMaterial_ljrrg")
+scale = Vector2(1.51, 1.51)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 557.0
+offset_right = 315.0
+offset_bottom = 634.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Next Shader"
+
+[node name="shader_label" type="Label" parent="Button"]
+layout_mode = 0
+offset_top = -128.0
+offset_right = 304.0
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="info" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 708.0
+offset_top = -542.0
+offset_right = 1135.0
+offset_bottom = -194.0
+theme_override_font_sizes/font_size = 40
+text = "When you want to see the shader code for the scene name on the left, the code is in the demo_shaders folder."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

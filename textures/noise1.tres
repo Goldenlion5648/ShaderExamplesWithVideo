@@ -1,0 +1,11 @@
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://0bhwgm0obujf"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_y3msd"]
+resource_local_to_scene = true
+domain_warp_enabled = true
+
+[resource]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_y3msd")

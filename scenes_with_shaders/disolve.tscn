@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://brepivf8i7173"]
+
+[ext_resource type="Shader" path="res://shaders/disolve_shaders/disolve.gdshader" id="1_sany4"]
+[ext_resource type="Texture2D" uid="uid://b77xiyq7ko8c1" path="res://textures/snake_noise.tres" id="2_lkgiw"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="3_dpxct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoubp"]
+resource_local_to_scene = true
+shader = ExtResource("1_sany4")
+shader_parameter/dissolveNoise = ExtResource("2_lkgiw")
+
+[node name="disolve" type="TextureRect"]
+material = SubResource("ShaderMaterial_aoubp")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("3_dpxct")
+expand_mode = 2

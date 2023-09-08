@@ -1,0 +1,17 @@
+[gd_resource type="Shader" format=3 uid="uid://cm45jkkipa1e4"]
+
+[resource]
+code = "shader_type canvas_item;
+void fragment() {
+	float tall = 500.0;
+    vec2 pos = mod(FRAGCOORD.xy, vec2(tall)) - vec2(16.0);
+	int tile_size = 16;
+	if(pos.y < abs(sin(TIME) * tall))
+	{
+		if((int(int(floor(pos.x)) % (tile_size * 2) < tile_size) ^ 
+					int(int(floor(pos.y)) % (tile_size * 2) < tile_size)) == 1){
+			COLOR.rgba = vec4(0);
+		}
+	}
+}
+"

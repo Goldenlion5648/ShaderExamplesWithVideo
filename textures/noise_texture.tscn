@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://qiael2san5i"]
+
+[ext_resource type="Shader" path="res://shaders/noise_texture_shaders/overlayed_noise.gdshader" id="1_npt21"]
+[ext_resource type="Texture2D" uid="uid://d2f17100wfb48" path="res://textures/noise2.tres" id="2_nuqh0"]
+[ext_resource type="Texture2D" uid="uid://0bhwgm0obujf" path="res://textures/noise1.tres" id="3_sdjbn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrtw5"]
+shader = ExtResource("1_npt21")
+shader_parameter/scroll1 = Vector2(1, 1)
+shader_parameter/scroll2 = Vector2(1, 1)
+shader_parameter/texture2 = ExtResource("2_nuqh0")
+
+[node name="TextureRect" type="Sprite2D"]
+material = SubResource("ShaderMaterial_mrtw5")
+texture = ExtResource("3_sdjbn")

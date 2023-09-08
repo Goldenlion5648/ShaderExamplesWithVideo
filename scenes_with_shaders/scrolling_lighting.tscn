@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmxbfhs013e7g"]
+
+[ext_resource type="Shader" uid="uid://bg6ggo1ntnhxq" path="res://demo_shaders/scrolling_light.tres" id="1_v36qu"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_tk7f7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoubp"]
+resource_local_to_scene = true
+shader = ExtResource("1_v36qu")
+
+[node name="scrolling_lighting" type="TextureRect"]
+material = SubResource("ShaderMaterial_aoubp")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("2_tk7f7")
+expand_mode = 2

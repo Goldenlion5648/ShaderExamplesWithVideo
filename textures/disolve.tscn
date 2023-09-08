@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cldawtb5ltpfa"]
+
+[ext_resource type="Shader" path="res://shaders/disolve_shaders/disolve.gdshader" id="1_0rlir"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_jfqow"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8ho0u"]
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kp8er"]
+noise = SubResource("FastNoiseLite_8ho0u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sv5da"]
+shader = ExtResource("1_0rlir")
+shader_parameter/dissolveNoise = SubResource("NoiseTexture2D_kp8er")
+
+[node name="disolve" type="TextureRect"]
+material = SubResource("ShaderMaterial_sv5da")
+offset_right = 320.0
+offset_bottom = 294.0
+texture = ExtResource("2_jfqow")
+expand_mode = 2

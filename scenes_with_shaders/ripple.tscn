@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc2ikowo3t83d"]
+
+[ext_resource type="Shader" uid="uid://cfyiqd420hned" path="res://demo_shaders/ripple_effect.tres" id="1_e6dn3"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_qcefj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoubp"]
+resource_local_to_scene = true
+shader = ExtResource("1_e6dn3")
+
+[node name="fade_in_out5" type="TextureRect"]
+material = SubResource("ShaderMaterial_aoubp")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("2_qcefj")
+expand_mode = 2

@@ -1,0 +1,9 @@
+[gd_resource type="Shader" format=3 uid="uid://bjajm8uc4cuhj"]
+
+[resource]
+code = "shader_type canvas_item;
+void fragment() {
+    float wave = sin(FRAGCOORD.y * 0.1 + TIME) * 0.2;
+    COLOR.rgb += wave;
+}
+"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv0mklgx6xg6y"]
+
+[ext_resource type="Shader" uid="uid://br8nyqtf03bll" path="res://shaders/black_circle_transition.tres" id="1_q2uoy"]
+[ext_resource type="Texture2D" uid="uid://cum5c8138tc45" path="res://icon.svg" id="2_mns3a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ya8t"]
+resource_local_to_scene = true
+shader = ExtResource("1_q2uoy")
+
+[node name="checkerboard2" type="TextureRect"]
+visible = false
+material = SubResource("ShaderMaterial_4ya8t")
+offset_right = 271.0
+offset_bottom = 268.0
+texture = ExtResource("2_mns3a")
+expand_mode = 2

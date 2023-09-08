@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://sb2wtl6o3mws"]
+
+[ext_resource type="Shader" uid="uid://cfyiqd420hned" path="res://shaders/ripple_effect.tres" id="1_1i0cd"]
+[ext_resource type="Texture2D" uid="uid://bfd76tgkf305a" path="res://textures/happy_emoji.png" id="1_6io8k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tp3i"]
+shader = ExtResource("1_1i0cd")
+
+[node name="TextureRect" type="TextureRect"]
+material = SubResource("ShaderMaterial_1tp3i")
+offset_right = 411.0
+offset_bottom = 447.0
+texture = ExtResource("1_6io8k")
+expand_mode = 3

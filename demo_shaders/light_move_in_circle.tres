@@ -1,0 +1,19 @@
+[gd_resource type="Shader" format=3 uid="uid://dme132du08oor"]
+
+[resource]
+code = "shader_type canvas_item;
+
+void fragment() {
+	COLOR = texture(TEXTURE, UV);
+	float pos = 256.0;
+	vec2 center = vec2(.5, .5);
+	float dist_to_center = distance(center, UV.xy);
+	vec2 current_point_of_interest = center + vec2(cos(TIME) / 2.0, sin(TIME) / 2.0);
+	float dist_to_current_point = distance(
+			current_point_of_interest, UV.xy) + sin(TIME) / 13.0;
+    if(dist_to_current_point < .15) {
+		COLOR.r = 0.9255;
+		COLOR.g = 0.8706;
+	}
+}
+"

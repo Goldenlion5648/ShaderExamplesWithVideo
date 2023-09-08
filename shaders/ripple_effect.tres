@@ -1,0 +1,19 @@
+[gd_resource type="Shader" format=3 uid="uid://cfyiqd420hned"]
+
+[resource]
+code = "shader_type canvas_item;
+void fragment() {
+	vec2 center = vec2(0.5, 0.5);
+	COLOR = texture(TEXTURE, UV);
+	float dist_to_center = distance(center, UV.xy);
+	float black_length = .05;
+	float ring_spacing = .15;
+	float movement = (float(int(TIME * 100.0) % 300) / 2000.0);
+	for(float i=0.0; i < 20.0; i += ring_spacing) {
+		if(dist_to_center < i + movement && 
+					dist_to_center >= movement + i - black_length){
+			COLOR.rgb = vec3(0);
+		}
+	}
+}
+"
